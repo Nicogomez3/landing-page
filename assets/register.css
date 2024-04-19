@@ -1,0 +1,78 @@
+.form--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    gap: 15px;
+}
+
+.form--title {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+}
+
+.form--input {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    width: 350px;
+}
+
+.submit--btn {
+    background-color: #3498db;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 350px;
+    cursor: pointer;
+}
+
+.form--redirect {
+    font-size: 14px;
+    color: white;
+}
+
+.link--login {
+    color: antiquewhite;
+    border-bottom: 1px solid white;
+}
+
+.link--login:hover {
+    transition: all 0.9s ease-out;
+    border-bottom: none;
+}
+
+/* Error */
+
+.form--field.error input {
+    border: 3px solid #dc3545;
+  }
+  
+  .form--field small {
+    color: #dc3545;
+    max-width: 350px;
+    text-align: center;
+    display: none;
+    margin-top: 5px;
+  }
+  
+  .form--field.success input {
+    border: 3px solid #28a745;
+  }
+  
+  #form__error {
+    color: #dc3545;
+    font-size: 1rem;
+    margin: 8px 0px;
+    max-width: 350px;
+    text-align: center;
+  } 

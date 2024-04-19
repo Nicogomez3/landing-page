@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/login.css">
+    <title>Login </title>
+</head>
+<body>
+    <header>
+        <nav class="navbar--container">
+            <a class="navbar--logo" href="../index.html">EduTechHub</a>
+        </nav>
+    </header>
+    <div class="modal"  id="modal">
+        <div class="content-modal">
+            <h2>Bienvenido! <span class="text--gradient" id="user--name">nombre de usuario!</span> </h2>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quisquam tenetur error! Fugiat nesciunt modi consequuntur cum labore consectetur nihil. Reprehenderit itaque saepe autem, assumenda nesciunt magnam inventore! Ipsum, autem..</p>
+            <hr>
+        </div>
+    </div>
+    <main>
+        <form class="form--container" id="login--form" novalidate>
+            <p class="form--title">Iniciá Sesión</p>
+            <!-- Email -->
+            <div class="form--field">
+                <input type="email" placeholder="Correo Electronico" class="form--input" id="email" autocomplete="off">
+            </div>
+            <!-- password -->
+            <div class="form--field">
+                <input type="password" placeholder="Contraseña" class="form--input" id="password" autocomplete="off">
+            </div>
+
+            <small id="form--error"></small>
+            <input type="submit" class="submit--btn" value="Iniciar Sesión">
+            <p class="form--redirect">No tenés cuenta?
+                <a class="link--login" href="register.html">Registrate</a></p>
+        </form>
+    </main>
+    <footer class="footer">
+        <p> &copy; Todos los derechos reservados </p>
+    </footer>
+
+    <script src="../assets/login.js"></script>
+</body>
+</html>
