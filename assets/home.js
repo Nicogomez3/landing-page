@@ -2,6 +2,7 @@ const userName = document.getElementById('user--name')
 const logoutBtn = document.getElementById('logout--message')
 
 const activeUser = JSON.parse(sessionStorage.getItem('activeUser'))
+console.log(activeUser)
 
 const showUserName = () => {
     userName.textContent = `${activeUser.name} ${activeUser.lastName}` 

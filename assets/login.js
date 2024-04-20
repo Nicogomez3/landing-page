@@ -5,15 +5,27 @@ const formError = document.getElementById('form--error')
 const openModal = document.getElementById('modal')
 const userName = document.getElementById('user--name')
 
-const users = JSON.parse(localStorage.getItem('users')) || [];
-console.log(users)
+ const users = JSON.parse(localStorage.getItem('users')) || [];
+ console.log(users)
+
+
 
 const activeUser = JSON.parse(sessionStorage.getItem('activeUser'))
+console.log(activeUser)
 
-const showUserName = () => {
-     userName.textContent = `${activeUser.name} ${activeUser.lastName}` 
+ const showUserName = () => {
+   userName.textContent = `${activeUser?.name} ${activeUser?.lastName}` || '';
+   console.log(activeUser.lastName)
+   
+  };
 
-}
+// const showUserName = () => {
+//     if (activeUser && activeUser.name && activeUser.lastName) {
+//         userName.textContent = `Bienvenido, ${activeUser.name} ${activeUser.lastName}`;
+//     } else {
+//         userName.textContent = 'Bienvenido, Usuario';
+//     }
+// };
 
 const saveToSessionStorage = (user) => {
     sessionStorage.setItem('activeUser', JSON.stringify(user))
@@ -39,7 +51,7 @@ const showError = (message) => {
 
 
 
-const welcomeMessage = () => {
+const welcomeMessage = (modal) => {
     modal.style.display = "block";
 
   setTimeout(() => {
@@ -48,6 +60,8 @@ const welcomeMessage = () => {
             window.location.href = "../pages/home.html";
         }, 5000); // 3000 milisegundos = 3 segundos
     }, 10000); // Esperar 1 segundo antes de comenzar a contar los 3 segundos
+
+
 }
 
 const validAccount = () => {
@@ -76,6 +90,7 @@ const validAccount = () => {
 
 
     //funcion del modal aqui
+    showUserName()
     welcomeMessage()
     valid = true;
     formError.textContent = ''
@@ -91,13 +106,14 @@ const login = (e) => {
 
     if(validAccount()) {
         const user = users.find(user => user.email === inputEmail.value.trim())
-        welcomeMessage(modal)
         saveToSessionStorage(user)
+        showUserName();
+        welcomeMessage()
         
 
         setTimeout(()=> {
             window.location.href = "../pages/home.html";
-        }, 5000); // 3000 milisegundos = 3 segundos
+        }, 3000); // 3000 milisegundos = 3 segundos
         }
     
     }
