@@ -7,16 +7,13 @@ const userName = document.getElementById('user--name')
 
  const users = JSON.parse(localStorage.getItem('users')) || [];
  console.log(users)
-
-
+ 
 
 const activeUser = JSON.parse(sessionStorage.getItem('activeUser'))
 console.log(activeUser)
 
  const showUserName = () => {
    userName.textContent = `${activeUser?.name} ${activeUser?.lastName}` || '';
-   console.log(activeUser.lastName)
-   
   };
 
 // const showUserName = () => {
@@ -51,7 +48,7 @@ const showError = (message) => {
 
 
 
-const welcomeMessage = (modal) => {
+const welcomeMessage = () => {
     modal.style.display = "block";
 
   setTimeout(() => {
@@ -60,8 +57,6 @@ const welcomeMessage = (modal) => {
             window.location.href = "../pages/home.html";
         }, 5000); // 3000 milisegundos = 3 segundos
     }, 10000); // Esperar 1 segundo antes de comenzar a contar los 3 segundos
-
-
 }
 
 const validAccount = () => {
